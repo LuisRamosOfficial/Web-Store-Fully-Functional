@@ -14,11 +14,17 @@ model User {
   email     String    @unique
   password  String
   createdAt DateTime  @default(now())
-  
+  name String
   cart      Cart?
   cartId    Int?
 
   orders    Order[]
+}
+
+model Person {
+  id Int @id
+  Name String
+  Age Int
 }
 
 model Cart {
