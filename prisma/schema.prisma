@@ -1,4 +1,10 @@
 // prisma/schema.prisma
+enum UserType {
+  CONSUMER
+  SELLER
+  ADMIN
+}
+
 
 datasource db {
   provider = "sqlite"
@@ -14,6 +20,7 @@ model User {
   email     String    @unique
   password  String
   createdAt DateTime  @default(now())
+  type UserType
   name String
   cart      Cart?
   cartId    Int?
